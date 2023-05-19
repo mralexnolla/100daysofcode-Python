@@ -1,0 +1,108 @@
+# with open("./weather_data.csv") as weather_data:
+#     data = weather_data.readlines()
+#     print(data)
+
+# import csv
+#
+# with open("./weather_data.csv") as weather_data:
+#     data = csv.reader(weather_data)
+#     temperature = []
+#     for row in data:
+#         temp = row[1]
+#         if temp.isdigit():
+#             temp = int(temp)
+#             temperature.append(temp)
+#     print(temperature)
+
+
+import pandas
+
+data = pandas.read_csv("./weather_data.csv")
+print(data)
+
+print("==================")
+print("temp series or column")
+print("==================")
+
+print(data["temp"])
+
+print("==================")
+print("Average temperature")
+print("==================")
+
+print(data["temp"].mean())
+
+print("==================")
+print("Maximum  and Minimum temperature")
+print("==================")
+
+print(f"Max Temperature: {data.temp.max()} \nMin Temperature: {data.temp.min()}")
+
+print("==================")
+print("querying data where condition is sunny and tem == 12")
+print("==================")
+
+print(data[(data.condition == "Sunny") & (data.temp > 12)])
+
+print("==================")
+print("querying data where temperature is at maximum")
+print("==================")
+
+print(data[data.temp == data.temp.max()])
+
+print("==================")
+print("query monday's temperature an converting it into fahrenheit")
+print("==================")
+
+monday = data[data.day == "Monday"]
+print((monday.temp * (9/5)) + 32)
+
+print("==================")
+print("How to create a dataframe from scratch")
+print("==================")
+
+data_dict = {
+    "student": ["Alex", "Ese", "Nolla", "batta"],
+    "scores": [89, 95, 99, 93]
+}
+
+dframe = pandas.DataFrame(data_dict)
+print(dframe)
+
+# converting the DataFrame to csv
+dframe.to_csv("./student_scores.csv")
+
+=====================================
+extracting squirrel data
+====================================
+
+import pandas
+
+data = pandas.read_csv("./2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+grey = data[data["Primary Fur Color"] == "Gray"]
+cinnamon = data[data["Primary Fur Color"] == "Cinnamon"]
+black = data[data["Primary Fur Color"] == "Black"]
+g = len(grey)
+c = len(cinnamon)
+b = len(black)
+
+data_dict = {
+    "colors": ["Gray","Cinnamon","Black"],
+    "count": [g, c, b]
+}
+
+dFrame = pandas.DataFrame(data_dict)
+print(dFrame)
+dFrame.to_csv("./squirrel_color_count.csc")
+
+
+# === this code helped to get the x and y coordinates from map
+# def get_mouse_click(x, y):
+#     print(x, y)
+#
+# turtle.onscreenclick(get_mouse_click)
+
+
+
+
+
