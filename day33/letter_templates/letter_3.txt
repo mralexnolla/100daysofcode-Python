@@ -1,0 +1,8 @@
+Dear [NAME],
+
+It's your birthday! Have a great day!
+
+All the best,
+
+Alex from codeTrain
+(this message is send from my code)

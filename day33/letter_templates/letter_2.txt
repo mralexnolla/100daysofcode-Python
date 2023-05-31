@@ -1,0 +1,8 @@
+Hey [NAME],
+
+Happy birthday! Have a wonderful time today and eat lots of cake!
+
+Have a great day,
+
+Alex from codeTrain
+(this message is send from my code)
