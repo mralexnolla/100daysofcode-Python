@@ -1,0 +1,49 @@
+# import smtplib
+#
+# my_email = "nba4everwanted@gmail.com"
+# password = "mhtagsqxkqbjniyx"    #this is the app password
+#
+# with smtplib.SMTP("smtp.gmail.com") as connection:
+#     connection.starttls()
+#     connection.login(user=my_email, password=password)
+#     connection.sendmail(from_addr=my_email,
+#                     to_addrs=["nba4everwanted@yahoo.fr", "habibkadiri52@gmail.com", 'michealadeoye812@gmail.com'],
+#                     msg="Subject:Email test\n\n This a test mail 2 from alex")
+
+import datetime as dt
+now = dt.datetime.now()
+
+weekday = now.weekday()
+
+dob = dt.datetime(year=1983, month=9, day=13)
+print(dob)
+
+print(weekday)
+
+------------------
+
+import smtplib
+import datetime as dt
+import random
+
+now = dt.datetime.now()
+dow = now.weekday()
+
+my_email = "nba4everwanted@gmail.com"
+password = "mhtagsqxkqbjniyx"
+
+if dow == 2:
+    with open("quotes.txt") as quote_file:
+        all_quotes = quote_file.readlines()
+        quote = random.choice(all_quotes)
+    print(quote)
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(my_email, password)
+        connection.sendmail(
+            from_addr=my_email,
+            to_addrs=["nba4everwanted@yahoo.fr","habibkadiri52@gmail.com", 'michealadeoye812@gmail.com'],
+            msg=f"Subject:Wednessday Motivation\n\n{quote}")
+
+
+
