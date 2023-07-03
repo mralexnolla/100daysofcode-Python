@@ -1,0 +1,77 @@
+from bs4 import BeautifulSoup
+
+with open('website.html') as file:
+    contents = file.read()
+
+soup = BeautifulSoup(contents, 'html.parser')
+
+all_paragraphs = soup.find_all(name='a')
+
+# for tag in all_paragraphs:
+    #print(tag.getText())
+    #print(tag.get("href"))
+
+heading = soup.find(name='h1', id='name')
+# print(heading)
+# print(heading.getText())
+
+all_classes = soup.find('h3', class_='heading')
+# print(all_classes.name)
+
+company_url = soup.select_one(selector="p a")
+print(company_url)
+
+name = soup.select_one(selector="#name")
+print(name)
+
+heading = soup.select(".heading")
+print(heading)
+
+===================================
+
+from bs4 import BeautifulSoup
+
+import requests
+
+response = requests.get('https://news.ycombinator.com/news')
+
+yc = response.text
+
+soup = BeautifulSoup(yc, 'html.parser')
+
+articles = soup.find_all(class_='titleline')
+article_texts = []
+article_links = []
+for i in articles:
+     # print(i.a)
+     article_texts.append(i.a.getText())
+     article_links.append(i.a.get("href"))
+#     print(i.a.getText())
+#     print(i.a.get("href"))
+articleTitles = soup.find(class_='titleline').a.getText()
+article_link = soup.find(class_= 'titleline').a.get("href")
+
+
+article_updavote = [int(score.getText().split()[0]) for score in soup.find_all(class_='score')]
+
+largestIndex = article_updavote.index(max(article_updavote))
+
+print(article_texts[largestIndex])
+print(article_links[largestIndex])
+print(article_updavote)
+
+
+print(largestIndex)
+
+
+
+# for s in article_updavote:
+#     print(s.getText())
+
+# print(articles)
+# print(articleTitles)
+# print(article_link)
+# print(article_updavote)
+
+
+
