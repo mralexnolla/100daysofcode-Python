@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" />
+</head>
+<body>
+    <h1>Hey  {{name.capitalize()}}</h1>
+    <h2>I think you a {{gender.capitalize()}}</h2>
+    <h2>Probability that i am right base on the number of times your name has been samples is {{probab}}</h2>
+    <h2>And your age is not far from {{age}}</h2>
+    <h2>Your name has been samples {{count}} times </h2>
+</body>
+<footer>
+    <h3>
+        copyright by #thanU4Ex16 {{year}}
+    </h3>
+
+</footer>
+</html>

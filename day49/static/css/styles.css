@@ -1,0 +1,57 @@
+/* Style for the body and gradient background */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(140deg,
+  hsl(240deg 73% 33%) 0%,
+  hsl(310deg 100% 23%) 79%,
+  hsl(337deg 100% 26%) 89%,
+  hsl(5deg 76% 27%) 94%,
+  hsl(34deg 100% 19%) 96%,
+  hsl(55deg 62% 19%) 97%,
+  hsl(67deg 57% 20%) 97%,
+  hsl(81deg 51% 23%) 98%,
+  hsl(98deg 43% 26%) 99%,
+  hsl(122deg 37% 29%) 99%,
+  hsl(146deg 61% 27%) 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+
+
+/* Style for the header */
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style for the sub-headers */
+h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Style for the footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+}
+
+/* Style for the footer text */
+footer h3 {
+  margin: 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+}
